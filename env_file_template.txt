@@ -1,0 +1,4 @@
+Create .env file in your VSCode or any tool and fill with these requirement key
+
+OPENAI_API_KEY= 
+MONGODB_URI=
