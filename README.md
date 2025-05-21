@@ -6,17 +6,17 @@ ChAllo adalah chatbot yang dirancang khusus untuk membantu nasabah dan calon nas
 
 ## Project Background
 
-Di era digital, nasabah membutuhkan informasi cepat. Namun, pengalaman layanan pelanggan saat ini seringkali kurang optimal. Berdasarkan masukan nasabah, seperti ulasan aplikasi yang menyatakan "Email dan whatsapp allocare tidak pernah merespon, harus telepon ke allocare yang setiap komplain pasti habis biaya lebih dari 20 ribu rupiah", terlihat jelas adanya frustrasi akibat respons yang lambat dan biaya komunikasi yang tinggi. Nasabah mengandalkan pencarian manual atau call center yang memakan waktu dan berpotensi mengurangi kepuasan.
+Di era digital, nasabah membutuhkan informasi cepat. Namun, pengalaman layanan pelanggan saat ini seringkali kurang optimal. Berdasarkan masukan nasabah, seperti ulasan aplikasi yang menyatakan "Email dan whatsapp allocare tidak pernah merespon, harus telepon ke allocare yang setiap komplain pasti habis biaya lebih dari 20 ribu rupiah", terlihat jelas adanya frustrasi akibat respons yang lambat dan biaya komunikasi yang tinggi. Nasabah mengandalkan pencarian manual melalui website atau call center yang memakan waktu dan berpotensi mengurangi kepuasan.
 
-Untuk mengatasi langsung permasalahan ini dan meningkatkan pengalaman nasabah, kami mengembangkan Chatbot ChAllo. Ini adalah asisten otomatis 24/7 yang dirancang untuk menjawab pertanyaan umum berdasarkan FAQ Allo Bank. ChAllo dibangun menggunakan Large Language Model (LLM) OpenAI dan datanya berasal dari web scraping website resmi Allo Bank.
+Untuk mengatasi langsung permasalahan ini dan meningkatkan kepuasan nasabah, kami mengembangkan Chatbot ChAllo. Ini adalah asisten otomatis 24/7 yang dirancang untuk menjawab pertanyaan umum berdasarkan FAQ Allo Bank. ChAllo dibangun menggunakan Large Language Model (LLM) OpenAI dan datanya berasal dari web scraping website resmi Allo Bank.
 
-Proyek ini bertujuan meningkatkan kepuasan nasabah (memberikan akses instan dan tanpa biaya telepon), mengurangi beban operasional bank (meminimalkan pertanyaan berulang), dan meningkatkan efisiensi informasi. Singkatnya, ChAllo akan mentransformasi layanan pelanggan Allo Bank menjadi lebih modern, responsif, dan hemat biaya bagi nasabah.
+Proyek ini bertujuan meningkatkan kepuasan nasabah (memberikan akses cepat dan tanpa biaya telepon), mengurangi beban operasional bank (meminimalkan pertanyaan berulang), dan meningkatkan efisiensi informasi. Singkatnya, ChAllo akan mentransformasi layanan pelanggan Allo Bank menjadi lebih modern, responsif, dan hemat biaya bagi nasabah.
 
 ---
 
 ## Objective
 
-Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas layanan pelanggan dengan menyediakan akses jawaban instan 24/7, sekaligus mengurangi beban dan biaya komunikasi yang selama ini memberatkan nasabah. Kami juga berupaya mengurangi beban operasional Allo Bank dengan meminimalkan pertanyaan rutin yang ditangani staf, serta meningkatkan akurasi dan konsistensi informasi yang diberikan melalui sumber data FAQ resmi.
+Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas layanan pelanggan dengan menyediakan akses jawaban instan 24/7, sekaligus mengurangi beban dan biaya komunikasi yang selama ini memberatkan nasabah. Kami juga berupaya mengurangi beban operasional Allo Bank dengan meminimalkan pertanyaan umum yang rutin ditangani staf, serta meningkatkan akurasi dan konsistensi informasi yang diberikan melalui sumber data FAQ resmi.
 
 ---
 
