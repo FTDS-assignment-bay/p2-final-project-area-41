@@ -5,7 +5,6 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
-from streamlit_option_menu import option_menu
 import os
 import re
 
@@ -54,25 +53,27 @@ vector_store = MongoDBAtlasVectorSearch(
 PROFESSIONAL_PROMPT = PromptTemplate(
     input_variables=["context", "question"],
     template="""
-    Anda adalah Asisten Pajak Profesional Direktorat Jenderal Pajak Indonesia. 
-    Tugas utama:
-    1. Jawab pertanyaan pajak berdasarkan FAQ resmi DJP
-    2. Berikan panduan teknis pelaporan pajak dan masalah akun DJP Online
-    3. Jelaskan konsep perpajakan dengan bahasa sederhana
-    4. Bantu masalah teknis terkait layanan digital DJP
-    
+    Anda adalah Asisten Resmi Allo Bank Indonesia.
+    Tugas Anda adalah menjawab pertanyaan berdasarkan data FAQ resmi dari website Allo Bank.
+
+    Tanggung jawab utama:
+    Memberikan jawaban akurat dan informatif sesuai dengan kategori FAQ: umum, akun, produk, layanan, proses pengaduan nasabah, dan registrasi.
+    Menyampaikan informasi dengan bahasa profesional, jelas, dan mudah dipahami.
+    Memberikan panduan teknis (jika diperlukan) dalam format numerik atau langkah-langkah berurutan.
+    Menanggapi keluhan atau kendala nasabah dengan solusi yang relevan dari FAQ.
+
     Aturan jawaban:
-    - Hanya jawab pertanyaan terkait layanan pajak digital Indonesia
-    - Tolak tegas pertanyaan di luar lingkup pajak dengan sopan
-    - Gunakan format numerik untuk langkah prosedural
-    - Fokus pada poin penting
-    - Jangan cantumkan link/referensi apapun
-    
+    1. Jawab hanya berdasarkan informasi yang tersedia dalam konteks FAQ resmi.
+    2. Jika pertanyaan tidak relevan atau tidak tercakup dalam FAQ, jawab dengan sopan bahwa Anda tidak memiliki informasi tersebut.
+    3. Jangan mengarang jawaban atau memberikan informasi di luar dokumen sumber.
+    4. Jangan mencantumkan link eksternal, tautan promosi, atau informasi tambahan di luar konteks.
+    5. Gunakan format poin atau numerik bila menjelaskan prosedur atau langkah-langkah.
+
     Konteks resmi:
     {context}
-    
+
     Pertanyaan: {question}
-    
+
     Jawaban profesional:
     """
 )
@@ -119,7 +120,7 @@ def ask(query):
         result = qa.invoke({"query": query})
 
         if not result['source_documents']:
-            return "Informasi tidak ditemukan dalam database resmi. Silakan hubungi Kring Pajak 1500200"
+            return "Informasi tidak ditemukan dalam database resmi. Silakan hubungi kami 080 4110 4110"
         else:
             raw_answer = result['result'].strip()
             answer = clean_answer(raw_answer)
@@ -134,70 +135,71 @@ def ask(query):
         <div class="assistant-message">
             ⚠️ Gangguan Sistem<br>
             Mohon maaf, terjadi kesalahan teknis. Silakan coba lagi atau hubungi:<br>
-            • Hotline: 1500200<br>
-            • Email: djp@pajak.go.id
+            • Hotline: 080 4110 4110<br>
+            • Email: allocare@allobank.com
         </div>
         """
         st.session_state.messages.append({"role": "assistant", "content": error_msg})
-    
-    
 
-    # Initialize Chat History
-    if "messages" not in st.session_state:
-        st.session_state.messages = [{
-            "role": "assistant",
-            "content": "Selamat datang! Saya Challo , asisten virtual Bank Allo. Bagaimana saya bisa membantu Anda hari ini?"
-        }]
 
-    # Display Chat History
-    for message in st.session_state.messages:
-        if message["role"] == "user":
-            st.markdown(f"""
-            <div class="chat-container">
-                <div class="user-message">
-                    😀 <strong>Anda</strong><br>
-                    {message["content"]}
-                </div>
+# Input Chat
+prompt = st.chat_input("Tulis pertanyaan Anda di sini... (Contoh: Bagaimana cara mendaftar menjadi nasabah?)")
+
+if prompt:
+    # Add User Message
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    
+    # Prepare Answer
+    with st.spinner("Mencari informasi..."):
+        ask(prompt)
+
+    st.rerun()
+
+# Initialize Chat History
+if "messages" not in st.session_state:
+    st.session_state.messages = [{
+        "role": "assistant",
+        "content": "Selamat datang! Saya Challo , asisten virtual Bank Allo. Bagaimana saya bisa membantu Anda hari ini?"
+    }]
+
+# Display Chat History
+for message in st.session_state.messages:
+    if message["role"] == "user":
+        st.markdown(f"""
+        <div class="chat-container">
+            <div class="user-message">
+                😀 <strong>Anda</strong><br>
+                {message["content"]}
             </div>
-            """, unsafe_allow_html=True)
-        else:
-            st.markdown(f"""
-            <div class="chat-container">
-                <div class="assistant-message">
-                    🤖 <strong>Challo</strong><br>
-                    {message["content"]}
-                </div>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown(f"""
+        <div class="chat-container">
+            <div class="assistant-message">
+                🤖 <strong>Challo</strong><br>
+                {message["content"]}
             </div>
-            """, unsafe_allow_html=True)
-
-    # Input Chat
-    prompt = st.chat_input("Tulis pertanyaan Anda di sini... (Contoh: Bagaimana cara mendaftar menjadi nasabah?)")
-
-    if prompt:
-        # Add User Message
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        
-        # Prepare Answer
-        with st.spinner("Mencari informasi..."):
-            ask(prompt)
-    
-        st.rerun()
-
-st.markdown("### 📟 Tentang Challo")
-st.markdown("""
-<div style='text-align: justify; font-size: 16px;'>
-    Challo merupakan assistant chatbot yang dibuat untuk membantu nasabah ataupun calon nasabah yang punya masalah atau ingin bertanya mengenai
-    produk, layanan, registrasi dan pengaduan masalah
-</div>        
-""", unsafe_allow_html=True)
+        </div>
+        """, unsafe_allow_html=True)
 
 
-st.markdown("### 📩 Kontak")
-st.markdown("""
-**Jika Anda memiliki pertanyaan atau ingin berkolaborasi, hubungi kami melalui email berikut:**
+with st.sidebar:
+    st.markdown("### 📟 Tentang Challo")
+    st.markdown("""
+    <div style='text-align: justify; font-size: 16px;'>
+        Challo merupakan assistant chatbot yang dibuat untuk membantu nasabah ataupun calon nasabah yang punya masalah atau ingin bertanya mengenai
+        produk, layanan, registrasi dan pengaduan masalah.
+    </div>        
+    """, unsafe_allow_html=True)
 
-- 📧 [faqih.lasamba@gmail.com](mailto:galuh.adika@gmail.com) — *Data Scientist*
-- 📧 [BagasDistyo@gmail.com](mailto:Bagas@gmail.com) — *Data Engineer*
-- 📧 [Ilham@gmail.com](mailto:Ilham@gmail.com) — *Data Scientist*
-- 📧 [Dais@gmail.com](mailto:Dais@gmail.com) — *Data Analyst*
-""")
+
+    st.markdown("### 📩 Kontak")
+    st.markdown("""
+    **Jika Anda memiliki pertanyaan atau ingin berkolaborasi, hubungi kami melalui email berikut:**
+
+    - 📧 [faqih.lasamba@gmail.com](mailto:galuh.adika@gmail.com) — *Data Scientist*
+    - 📧 [BagasDistyo@gmail.com](mailto:Bagas@gmail.com) — *Data Engineer*
+    - 📧 [Ilham@gmail.com](mailto:Ilham@gmail.com) — *Data Scientist*
+    - 📧 [Dais@gmail.com](mailto:Dais@gmail.com) — *Data Analyst*
+    """)
