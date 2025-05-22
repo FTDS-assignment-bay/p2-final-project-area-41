@@ -39,8 +39,7 @@ Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas 
 | `RAG_gpt35turbo.ipynb`         | RAG model implementation using GPT-3.5          |
 | `RAG_vectorDB.ipynb`           | Vectore store configuration documentation       |
 | `allobank_faq_eda.ipynb`       | Exploratory Data Analysis documentation         |
-| `astrax-gpt-3.5-turbo.py`      | Deployment script for GPT-3.5 chatbot           |
-| `astrax-gpt-4.py`              | Deployment script for GPT-4 chatbot             |
+| `app.py`                       | Deployment script for ChAllo chatbot            |
 | `faq_allobank.csv`             | RAW dataset from webscraping                    |
 | `faq_allobank_clean.csv`       | Cleaned version of RAW dataset                  |
 | `scrapping.ipynb`              | Web scraping documentation                      |
@@ -49,7 +48,7 @@ Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas 
 
 ## About Dataset
 
-- Sourced from [Allo Bank Website](https://www.allobank.com/help)
+- Sumber data FAQ's: [Allo Bank Website](https://www.allobank.com/help)
 - Total: **369 questions & answers** and **352 questions & answers** setelah cleaning
 - Collection method: menggunakan metode scrapping
 
