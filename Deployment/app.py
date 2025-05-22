@@ -198,8 +198,8 @@ with st.sidebar:
     st.markdown("""
     **Jika Anda memiliki pertanyaan atau ingin berkolaborasi, hubungi kami melalui email berikut:**
 
-    - 📧 [faqih.lasamba@gmail.com](mailto:galuh.adika@gmail.com) — *Data Scientist*
+    - 📧 [faqih.lasamba@gmail.com](mailto:faqih.lasamba@gmail.com) — *Data Scientist*
     - 📧 [BagasDistyo@gmail.com](mailto:Bagas@gmail.com) — *Data Engineer*
-    - 📧 [Ilham@gmail.com](mailto:Ilham@gmail.com) — *Data Scientist*
-    - 📧 [Dais@gmail.com](mailto:Dais@gmail.com) — *Data Analyst*
+    - 📧 [ilhamnaufal980@gmail.com](mailto:ilhamnaufal980@gmail.com.com) — *Data Scientist*
+    - 📧 [sudaisalkharomain@gmail.com](sudaisalkharomain@gmail.com) — *Data Analyst*
     """)
