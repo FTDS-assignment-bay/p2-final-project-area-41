@@ -68,8 +68,9 @@ Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas 
 
 | Model     | Strengths                                              | Weaknesses                                                       |
 |-----------|--------------------------------------------------------|------------------------------------------------------------------|
-| GPT-3.5   | Faster response time, able to reject out-of-context queries | Sometimes too brief, lacks context for short questions      |
-| GPT-4     | More detailed answers, better contextualization for short questions, broader coverage | Slower response time (up to 20 seconds)                   |
+| GPT-3.5   | Pemrosesan lebih cepat, Biaya lebih murah | Kurang konsisten dalam menjaga batasan konteks      |
+| GPT-4     | Lebih konsisten dalam menjaga batasan konteks.
+, Dapat memberikan jawaban yang relevan, lebih singkat namun to the point, dan tetap akurat | Biaya lebih mahal daripada model GPT-3.5-turbo, Waktu pemrosesan lebih lama.                   |
 
 ---
 
