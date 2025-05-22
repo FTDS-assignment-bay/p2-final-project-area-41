@@ -39,8 +39,6 @@ Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas 
 | `RAG_gpt35turbo.ipynb`         | RAG model implementation using GPT-3.5          |
 | `RAG_vectorDB.ipynb`           | Vectore store configuration documentation       |
 | `allobank_faq_eda.ipynb`       | Exploratory Data Analysis documentation         |
-| `astrax-gpt-3.5-turbo.py`      | Deployment script for GPT-3.5 chatbot           |
-| `astrax-gpt-4.py`              | Deployment script for GPT-4 chatbot             |
 | `faq_allobank.csv`             | RAW dataset from webscraping                    |
 | `faq_allobank_clean.csv`       | Cleaned version of RAW dataset                  |
 | `scrapping.ipynb`              | Web scraping documentation                      |
@@ -69,8 +67,10 @@ Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas 
 
 | Model     | Strengths                                              | Weaknesses                                                       |
 |-----------|--------------------------------------------------------|------------------------------------------------------------------|
-| GPT-3.5   | Faster response time, able to reject out-of-context queries | Sometimes too brief, lacks context for short questions      |
-| GPT-4     | More detailed answers, better contextualization for short questions, broader coverage | Slower response time (up to 20 seconds)                   |
+| GPT-3.5   | Can answer questions relevantly and accurately, Can understand questions both formally and informally, Can refuse to answer questions out of context, Cheaper than the GPT-4 model, Faster Processing |  Less consistent in maintaining context boundaries      |
+| GPT-4     | relevant answers-shorter but to the point-and still accurate
+, understand questions both formally and informally
+, Better model in politely and professionally rejecting out-of-context questions of Allo Bank FAQ, Model More consistent in maintaining context boundaries | More expensive, Longer processing time, The answer feels more rigid because it is to the point                   |
 
 ---
 
