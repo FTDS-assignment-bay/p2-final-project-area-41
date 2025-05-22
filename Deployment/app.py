@@ -199,7 +199,7 @@ with st.sidebar:
     **Jika Anda memiliki pertanyaan atau ingin berkolaborasi, hubungi kami melalui email berikut:**
 
     - 📧 [faqih.lasamba@gmail.com](mailto:faqih.lasamba@gmail.com) — *Data Scientist*
-    - 📧 [BagasDistyo@gmail.com](mailto:Bagas@gmail.com) — *Data Engineer*
+    - 📧 [bagasdistyoutomo11@gmail.com](mailto:bagasdistyoutomo11@gmail.com) — *Data Engineer*
     - 📧 [ilhamnaufal980@gmail.com](mailto:ilhamnaufal980@gmail.com.com) — *Data Scientist*
     - 📧 [sudaisalkharomain@gmail.com](sudaisalkharomain@gmail.com) — *Data Analyst*
     """)
