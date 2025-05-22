@@ -69,8 +69,7 @@ Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas 
 | Model     | Strengths                                              | Weaknesses                                                       |
 |-----------|--------------------------------------------------------|------------------------------------------------------------------|
 | GPT-3.5   | Can answer questions relevantly and accurately, Can understand questions both formally and informally, Can refuse to answer questions out of context, Cheaper than the GPT-4 model, Faster Processing |  Less consistent in maintaining context boundaries      |
-| GPT-4     | relevant answers-shorter but to the point-and still accurate
-, understand questions both formally and informally, Better model in politely and professionally rejecting out-of-context questions of Allo Bank FAQ, Model More consistent in maintaining context boundaries | More expensive, Longer processing time, The answer feels more rigid because it is to the point                   |
+| GPT-4     | relevant answers-shorter but to the point-and still accurate, understand questions both formally and informally, Better model in politely and professionally rejecting out-of-context questions of Allo Bank FAQ, Model More consistent in maintaining context boundaries | More expensive, Longer processing time, The answer feels more rigid because it is to the point                   |
 
 ---
 
