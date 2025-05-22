@@ -76,7 +76,3 @@ Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas 
 ## Deployment
 
 ---
-
-## Presentation Slides
-
----
