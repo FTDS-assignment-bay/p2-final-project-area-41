@@ -1,2 +1,83 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/zPCDI5Mt)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19567464&assignment_repo_type=AssignmentRepo)
+# ChaAllo (Chat with Allo)
+
+ChAllo adalah chatbot yang dirancang khusus untuk membantu nasabah dan calon nasabah Allo Bank. Fungsinya adalah menjawab pertanyaan umum seputar FAQ Allo Bank yang diambil dari handbook yang sudah disiapkan. Chatbot ini dibangun menggunakan Large Language Model (LLM) OpenAI, sehingga mampu memberikan jawaban yang relevan dan akurat. Topik yang bisa dijawab sangat beragam, mulai dari informasi umum tentang Allo Bank, detail akun, produk, layanan, cara pendaftaran, hingga proses pengaduan nasabah. Data referensi yang digunakan untuk chatbot ini berasal dari hasil scraping (pengambilan data otomatis) dari bagian FAQ di website resmi Allo Bank.
+
+---
+
+## Project Background
+
+Di era digital, nasabah membutuhkan informasi cepat. Namun, layanan pelanggan dari Allo Bank melalui allocare saat ini seringkali kurang optimal. Berdasarkan salah satu ulasan aplikasi yang menyatakan "Email dan whatsapp allocare tidak pernah merespon, harus telepon ke allocare yang setiap komplain pasti habis biaya lebih dari 20 ribu rupiah", terlihat jelas adanya frustrasi akibat respons yang lambat dan biaya komunikasi yang tinggi. Nasabah mengandalkan pencarian manual melalui website atau call center yang memakan waktu dan berpotensi mengurangi kepuasan.
+
+Untuk mengatasi langsung permasalahan ini dan meningkatkan kepuasan nasabah, kami mengembangkan Chatbot ChAllo. Ini adalah asisten otomatis 24/7 yang dirancang untuk menjawab pertanyaan umum berdasarkan FAQ Allo Bank. ChAllo dibangun menggunakan Large Language Model (LLM) OpenAI dan datanya berasal dari web scraping website resmi Allo Bank.
+
+Proyek ini bertujuan meningkatkan kepuasan nasabah (memberikan akses cepat dan tanpa biaya telepon), mengurangi beban operasional bank (meminimalkan pertanyaan berulang), dan meningkatkan efisiensi informasi. Singkatnya, ChAllo akan mentransformasi layanan pelanggan Allo Bank menjadi lebih modern, responsif, dan hemat biaya bagi nasabah.
+
+---
+
+## Objective
+
+Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas layanan pelanggan dengan menyediakan akses jawaban instan 24/7, sekaligus mengurangi beban dan biaya komunikasi yang selama ini memberatkan nasabah. Kami juga berupaya mengurangi beban operasional Allo Bank dengan meminimalkan pertanyaan umum yang rutin ditangani staf, serta meningkatkan akurasi dan konsistensi informasi yang diberikan melalui sumber data FAQ resmi.
+
+---
+
+## Team Members
+
+| Name                          | Role                 |
+|-------------------------------|----------------------|
+| Muhammad Faqih Tria Lasamba   | Data Scientist       |
+| Ilham Nauval Andrika          | Data Scientist       |
+| Nur M Assudais Alkharomain    | Data Analyst         |
+| Bagas Distyo Utomo            | Data Engineer        |
+
+---
+
+## File Explanation
+
+| File                           | Description                                     |
+|--------------------------------|-------------------------------------------------|
+| `Optimized_RAG-gpt4.ipynb`     | RAG model implementation using GPT-4            |
+| `RAG_gpt35turbo.ipynb`         | RAG model implementation using GPT-3.5          |
+| `RAG_vectorDB.ipynb`           | Vectore store configuration documentation       |
+| `allobank_faq_eda.ipynb`       | Exploratory Data Analysis documentation         |
+| `astrax-gpt-3.5-turbo.py`      | Deployment script for GPT-3.5 chatbot           |
+| `astrax-gpt-4.py`              | Deployment script for GPT-4 chatbot             |
+| `faq_allobank.csv`             | RAW dataset from webscraping                    |
+| `faq_allobank_clean.csv`       | Cleaned version of RAW dataset                  |
+| `scrapping.ipynb`              | Web scraping documentation                      |
+
+---
+
+## About Dataset
+
+- Sourced from [Allo Bank Website](https://www.allobank.com/help)
+- Total: **369 questions & answers** and **352 questions & answers** setelah cleaning
+- Collection method: menggunakan metode scrapping
+
+---
+
+## Method & Technology Used for Modeling
+
+- **LangChain** for RAG pipeline
+- **OpenAI GPT-3.5 and GPT-4** as base LLMs
+- **MongoDB Atlas Vector Search** as the NoSQL vector database
+- **Streamlit** for UI development
+- **Hugging Face** for web deployment hosting
+  
+---
+
+## Model Evaluation
+
+| Model     | Strengths                                              | Weaknesses                                                       |
+|-----------|--------------------------------------------------------|------------------------------------------------------------------|
+| GPT-3.5   | Faster response time, able to reject out-of-context queries | Sometimes too brief, lacks context for short questions      |
+| GPT-4     | More detailed answers, better contextualization for short questions, broader coverage | Slower response time (up to 20 seconds)                   |
+
+---
+
+## Deployment
+
+---
+
+## Presentation Slides
+
+---
