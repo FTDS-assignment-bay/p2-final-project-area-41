@@ -74,5 +74,7 @@ Pembuatan Chatbot ChAllo memiliki tujuan utama untuk meningkatkan responsivitas 
 ---
 
 ## Deployment
+Model deployment access: [ChAllo](https://huggingface.co/spaces/faqihlasamba29/p2-final-project-area-41)
+
 
 ---
